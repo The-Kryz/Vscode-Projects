@@ -7,18 +7,19 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
-    color: #333;
+    color: #0F111F;
+    background-color: #F3F5F9;
 }
 
 /* Navbar */
 header {
-    background-color: #2c3e50;
-    color: white;
+    background-color: #0F111F;
+    color: #F3F5F9;
     padding: 1rem 0;
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 5px rgba(15, 17, 31, 0.15);
 }
 
 .navbar {
@@ -33,6 +34,7 @@ header {
 .logo {
     font-size: 1.8rem;
     font-weight: bold;
+    color: #F3F5F9;
 }
 
 .nav-links {
@@ -42,19 +44,19 @@ header {
 }
 
 .nav-links a {
-    color: white;
+    color: #F3F5F9;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
-    color: #3498db;
+    color: #D7D6D8;
 }
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
+    background: linear-gradient(135deg, #0F111F 0%, #1a1d2e 100%);
+    color: #F3F5F9;
     padding: 2rem;
     min-height: 70vh;
     display: flex;
@@ -86,13 +88,13 @@ header {
 .hero-content-left h1 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
-    color: white;
+    color: #F3F5F9;
 }
 
 .hero-content-left p {
     font-size: 1.1rem;
     margin-bottom: 2rem;
-    color: rgba(255, 255, 255, 0.9);
+    color: rgba(243, 245, 249, 0.9);
 }
 
 .whatsapp-button {
@@ -130,44 +132,47 @@ header {
 }
 
 .glpi-container {
-    background: rgba(255, 255, 255, 0.95);
+    background: #F3F5F9;
     border-radius: 15px;
     padding: 2.5rem;
     width: 100%;
     max-width: 400px;
-    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 15px 50px rgba(15, 17, 31, 0.2);
     text-align: center;
+    border: 2px solid #D7D6D8;
 }
 
 .glpi-container h2 {
     font-size: 1.8rem;
-    color: #2c3e50;
+    color: #0F111F;
     margin-bottom: 0.5rem;
 }
 
 .glpi-container p {
-    color: #7f8c8d;
+    color: #0F111F;
     margin-bottom: 2rem;
     font-size: 0.95rem;
 }
 
 .glpi-button {
     display: inline-block;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
+    background: linear-gradient(135deg, #0F111F 0%, #1a1d2e 100%);
+    color: #F3F5F9;
     padding: 1rem 2rem;
     font-size: 1rem;
     font-weight: bold;
-    border: none;
+    border: 2px solid #D7D6D8;
     border-radius: 8px;
     cursor: pointer;
     text-decoration: none;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
 .glpi-button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+    box-shadow: 0 8px 20px rgba(15, 17, 31, 0.3);
+    background: linear-gradient(135deg, #1a1d2e 0%, #0F111F 100%);
+    border-color: #F3F5F9;
 }
 
 @keyframes fadeInLeft {
@@ -216,12 +221,12 @@ header {
 
 /* CTA Button */
 .cta-button {
-    background-color: white;
-    color: #667eea;
+    background-color: #F3F5F9;
+    color: #0F111F;
     padding: 1rem 2rem;
     font-size: 1rem;
     font-weight: bold;
-    border: none;
+    border: 2px solid #0F111F;
     border-radius: 50px;
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -229,7 +234,8 @@ header {
 
 .cta-button:hover {
     transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 10px 20px rgba(15, 17, 31, 0.2);
+    background-color: #D7D6D8;
 }
 
 /* About Section */
@@ -237,32 +243,35 @@ header {
     padding: 4rem 2rem;
     max-width: 1200px;
     margin: 0 auto;
+    background-color: #F3F5F9;
 }
 
 .about h2 {
     font-size: 2rem;
     margin-bottom: 2rem;
-    color: #2c3e50;
+    color: #0F111F;
     text-align: center;
 }
 
 .about-content {
     line-height: 1.8;
-    color: #444;
+    color: #0F111F;
 }
 
 .about-content h3 {
     font-size: 1.5rem;
-    color: #667eea;
+    color: #0F111F;
     margin-top: 1.5rem;
     margin-bottom: 1rem;
+    font-weight: 700;
 }
 
 .about-content h4 {
     font-size: 1.2rem;
-    color: #2c3e50;
+    color: #0F111F;
     margin-top: 1.5rem;
     margin-bottom: 0.8rem;
+    font-weight: 600;
 }
 
 .about-content p {
@@ -274,15 +283,16 @@ header {
 .about-closing {
     margin-top: 2rem;
     padding: 1.5rem;
-    background-color: #f0f4ff;
-    border-left: 4px solid #667eea;
+    background-color: #D7D6D8;
+    border-left: 4px solid #0F111F;
     font-size: 1.05rem;
     border-radius: 5px;
+    color: #0F111F;
 }
 
 /* Services Section */
 .services {
-    background-color: #f8f9fa;
+    background-color: #F3F5F9;
     padding: 4rem 2rem;
 }
 
@@ -290,7 +300,7 @@ header {
     font-size: 2rem;
     text-align: center;
     margin-bottom: 3rem;
-    color: #2c3e50;
+    color: #0F111F;
 }
 
 .services-grid {
@@ -305,19 +315,26 @@ header {
     background: white;
     padding: 2rem;
     border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 2px solid #D7D6D8;
+    box-shadow: 0 5px 15px rgba(15, 17, 31, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
     text-align: center;
 }
 
 .service-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 15px 30px rgba(15, 17, 31, 0.15);
+    border-color: #0F111F;
 }
 
 .service-card h3 {
-    color: #667eea;
+    color: #0F111F;
     margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.service-card p {
+    color: #0F111F;
 }
 
 /* Contact Section */
@@ -325,13 +342,14 @@ header {
     padding: 4rem 2rem;
     max-width: 1200px;
     margin: 0 auto;
+    background-color: #F3F5F9;
 }
 
 .contact h2 {
     font-size: 2rem;
     text-align: center;
     margin-bottom: 2rem;
-    color: #2c3e50;
+    color: #0F111F;
 }
 
 .contact-form {
@@ -345,41 +363,50 @@ header {
 .contact-form input,
 .contact-form textarea {
     padding: 1rem;
-    border: 1px solid #ddd;
+    border: 2px solid #D7D6D8;
     border-radius: 5px;
     font-family: inherit;
     font-size: 1rem;
-    transition: border-color 0.3s ease;
+    background-color: white;
+    color: #0F111F;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: #D7D6D8;
 }
 
 .contact-form input:focus,
 .contact-form textarea:focus {
     outline: none;
-    border-color: #667eea;
-    box-shadow: 0 0 5px rgba(102, 126, 234, 0.3);
+    border-color: #0F111F;
+    box-shadow: 0 0 8px rgba(15, 17, 31, 0.2);
 }
 
 .submit-button {
-    background-color: #667eea;
-    color: white;
+    background-color: #0F111F;
+    color: #F3F5F9;
     padding: 1rem 2rem;
     font-size: 1rem;
     font-weight: bold;
-    border: none;
+    border: 2px solid #0F111F;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .submit-button:hover {
-    background-color: #764ba2;
+    background-color: #1a1d2e;
     transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(15, 17, 31, 0.2);
+    border-color: #D7D6D8;
 }
 
 /* Footer */
 footer {
-    background-color: #2c3e50;
-    color: white;
+    background-color: #0F111F;
+    color: #F3F5F9;
     text-align: center;
     padding: 2rem;
     margin-top: 4rem;
