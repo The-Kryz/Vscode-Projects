@@ -66,6 +66,35 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Animações de Fundo Flutuantes */
+.hero::before,
+.hero::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.1;
+}
+
+.hero::before {
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle at 30% 50%, #25D366, #0F111F);
+    top: -100px;
+    left: -100px;
+    animation: float 20s ease-in-out infinite;
+}
+
+.hero::after {
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle at 70% 60%, #FF8C00, #0F111F);
+    bottom: -80px;
+    right: -80px;
+    animation: float 25s ease-in-out infinite reverse;
 }
 
 .hero-container {
@@ -75,6 +104,8 @@ header {
     max-width: 1200px;
     width: 100%;
     align-items: center;
+    position: relative;
+    z-index: 2;
 }
 
 /* Coluna Esquerda - WhatsApp */
@@ -82,11 +113,25 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+}
+
+.hero-left::before {
+    content: '';
+    position: absolute;
+    width: 150%;
+    height: 150%;
+    background: radial-gradient(circle, rgba(37, 211, 102, 0.2) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: pulse 4s ease-in-out infinite;
+    z-index: -1;
 }
 
 .hero-content-left {
     text-align: left;
     animation: fadeInLeft 1s ease-in;
+    position: relative;
+    z-index: 1;
 }
 
 .hero-content-left h1 {
@@ -133,6 +178,18 @@ header {
     align-items: center;
     justify-content: center;
     animation: fadeInRight 1s ease-in;
+    position: relative;
+}
+
+.hero-right::before {
+    content: '';
+    position: absolute;
+    width: 150%;
+    height: 150%;
+    background: radial-gradient(circle, rgba(255, 140, 0, 0.2) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: pulse 4s ease-in-out infinite;
+    z-index: -1;
 }
 
 .glpi-container {
@@ -144,6 +201,8 @@ header {
     box-shadow: 0 15px 50px rgba(15, 17, 31, 0.2);
     text-align: center;
     border: 2px solid #D7D6D8;
+    position: relative;
+    z-index: 1;
 }
 
 .glpi-container h2 {
@@ -202,12 +261,70 @@ header {
     to { opacity: 1; transform: translateY(0); }
 }
 
+@keyframes float {
+    0%, 100% {
+        transform: translate(0, 0) scale(1);
+    }
+    25% {
+        transform: translate(30px, -30px) scale(1.05);
+    }
+    50% {
+        transform: translate(0, -50px) scale(1);
+    }
+    75% {
+        transform: translate(-30px, -30px) scale(0.95);
+    }
+}
+
 @keyframes borderRotate {
     0% { box-shadow: 0 0 0 3px #0F111F, inset 0 0 0 3px #FF8C00, 0 8px 25px rgba(255, 140, 0, 0.4); }
     25% { box-shadow: 0 0 0 3px #0F111F, inset 0 0 0 3px #FF8C00, 8px 0 25px rgba(255, 140, 0, 0.4); }
     50% { box-shadow: 0 0 0 3px #0F111F, inset 0 0 0 3px #FF8C00, 0 -8px 25px rgba(255, 140, 0, 0.4); }
     75% { box-shadow: 0 0 0 3px #0F111F, inset 0 0 0 3px #FF8C00, -8px 0 25px rgba(255, 140, 0, 0.4); }
     100% { box-shadow: 0 0 0 3px #0F111F, inset 0 0 0 3px #FF8C00, 0 8px 25px rgba(255, 140, 0, 0.4); }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.3;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.1;
+    }
+}
+
+@keyframes instagramGradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        background-position: -100% 0;
+    }
+    to {
+        background-position: 0 0;
+    }
 }
 
 /* =========================================
@@ -482,67 +599,250 @@ header {
    ========================================= */
 .contact {
     padding: 4rem 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-    background-color: #F3F5F9;
+    background: linear-gradient(135deg, #FD1D1D 0%, #833AB4 25%, #FD1D1D 50%, #FCD34D 75%, #FD1D1D 100%);
+    background-size: 300% 300%;
+    animation: instagramGradient 15s ease infinite;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Elementos flutuantes de fundo */
+.contact::before,
+.contact::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.1;
+}
+
+.contact::before {
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, #FFFFFF, transparent);
+    top: -150px;
+    left: -150px;
+    animation: float 25s ease-in-out infinite;
+}
+
+.contact::after {
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, #FFFFFF, transparent);
+    bottom: -100px;
+    right: -100px;
+    animation: float 30s ease-in-out infinite reverse;
 }
 
 .contact h2 {
     font-size: 2rem;
     text-align: center;
     margin-bottom: 2rem;
-    color: #0F111F;
+    color: #FFFFFF;
+    position: relative;
+    z-index: 2;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
-.contact-form {
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.instagram-feed {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 1rem;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    overflow: hidden;
+    animation: slideUp 0.8s ease-out;
+}
+
+.instagram-feed iframe {
+    width: 100%;
+    height: auto;
+    min-height: 600px;
+    border: none;
+}
+
+.contact-info {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
-    max-width: 600px;
-    margin: 0 auto;
+    justify-content: center;
+    gap: 2rem;
+    position: relative;
 }
 
-.contact-form input,
-.contact-form textarea {
-    padding: 1rem;
-    border: 2px solid #D7D6D8;
-    border-radius: 5px;
-    font-family: inherit;
-    font-size: 1rem;
-    background-color: white;
+.contact-info h3 {
+    font-size: 1.8rem;
+    color: #FFFFFF;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 1rem;
+}
+
+.contact-methods {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.contact-method {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 1.5rem;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    text-decoration: none;
     color: #0F111F;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    animation: slideUp 0.8s ease-out;
 }
 
-.contact-form input::placeholder,
-.contact-form textarea::placeholder {
-    color: #D7D6D8;
+.contact-method:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    background: rgba(255, 255, 255, 1);
 }
 
-.contact-form input:focus,
-.contact-form textarea:focus {
-    outline: none;
-    border-color: #0F111F;
-    box-shadow: 0 0 8px rgba(15, 17, 31, 0.2);
+.contact-method span {
+    font-size: 2rem;
 }
 
-.submit-button {
-    background-color: #0F111F;
-    color: #F3F5F9;
-    padding: 1rem 2rem;
-    font-size: 1rem;
-    font-weight: bold;
-    border: 2px solid #0F111F;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+.contact-method div {
+    display: flex;
+    flex-direction: column;
 }
 
-.submit-button:hover {
-    background-color: #1a1d2e;
-    transform: translateY(-3px);
-    box-shadow: 0 8px 16px rgba(15, 17, 31, 0.2);
-    border-color: #D7D6D8;
+.contact-method strong {
+    font-size: 1.1rem;
+    color: #0F111F;
+}
+
+.contact-method p {
+    font-size: 0.9rem;
+    color: #666666;
+    margin: 0.3rem 0 0 0;
+}
+
+/* WhatsApp Contact Method */
+.whatsapp-link {
+    position: relative;
+    overflow: hidden;
+}
+
+.whatsapp-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(37, 211, 102, 0.3), transparent);
+    transition: left 0.6s ease;
+}
+
+.whatsapp-link:hover {
+    background: linear-gradient(90deg, #FFFFFF 0%, rgba(37, 211, 102, 0.15) 50%, #FFFFFF 100%) !important;
+    border-color: #25D366 !important;
+    box-shadow: 0 15px 40px rgba(37, 211, 102, 0.4) !important;
+}
+
+.whatsapp-link:hover::before {
+    left: 100%;
+}
+
+.whatsapp-link:hover span {
+    animation: pulse-icon 0.6s ease;
+}
+
+/* Instagram Contact Method */
+.instagram-link-btn {
+    position: relative;
+    overflow: hidden;
+}
+
+.instagram-link-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(253, 29, 29, 0.3), transparent);
+    transition: left 0.6s ease;
+}
+
+.instagram-link-btn:hover {
+    background: linear-gradient(135deg, #FD1D1D 0%, #833AB4 50%, #FCD34D 100%) !important;
+    border-color: #FD1D1D !important;
+    box-shadow: 0 15px 40px rgba(253, 29, 29, 0.4) !important;
+    color: #FFFFFF !important;
+}
+
+.instagram-link-btn:hover::before {
+    left: 100%;
+}
+
+.instagram-link-btn:hover strong,
+.instagram-link-btn:hover p {
+    color: #FFFFFF !important;
+}
+
+.instagram-link-btn:hover span {
+    animation: pulse-icon 0.6s ease;
+}
+
+/* Email Contact Method */
+.email-link {
+    position: relative;
+    overflow: hidden;
+}
+
+.email-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(66, 133, 244, 0.3), transparent);
+    transition: left 0.6s ease;
+}
+
+.email-link:hover {
+    background: linear-gradient(90deg, #FFFFFF 0%, rgba(66, 133, 244, 0.15) 50%, #FFFFFF 100%) !important;
+    border-color: #4285F4 !important;
+    box-shadow: 0 15px 40px rgba(66, 133, 244, 0.4) !important;
+}
+
+.email-link:hover::before {
+    left: 100%;
+}
+
+.email-link:hover span {
+    animation: pulse-icon 0.6s ease;
+}
+
+@keyframes pulse-icon {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
 }
 
 /* =========================================
@@ -633,6 +933,73 @@ footer {
         width: 10px;
         height: 10px;
     }
+
+    /* Contato em Tablet */
+    .contact-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .instagram-feed {
+        padding: 0.5rem;
+    }
+
+    .instagram-feed iframe {
+        min-height: 500px;
+    }
+
+    .contact-info h3 {
+        font-size: 1.5rem;
+    }
+
+    .contact-method {
+        padding: 1.2rem;
+        gap: 1rem;
+    }
+
+    .contact-method span {
+        font-size: 1.8rem;
+    }
+}
+
+/* =========================================
+   Tablet (768px - 1024px)
+   ========================================= */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .contact-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .instagram-feed iframe {
+        min-height: 500px;
+    }
+
+    .contact-info {
+        gap: 1.5rem;
+    }
+
+    .contact-methods {
+        gap: 1rem;
+    }
+
+    .contact-method {
+        padding: 1.2rem;
+        gap: 1rem;
+    }
+
+    .services-carousel-wrapper {
+        gap: 1rem;
+    }
+
+    .services h2 {
+        font-size: 1.8rem;
+    }
+
+    .service-card {
+        min-width: 290px;
+        padding: 1.5rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -671,6 +1038,14 @@ footer {
     .nav-links {
         gap: 0.5rem;
         font-size: 0.8rem;
+    }
+
+    .logo {
+        font-size: 1.3rem;
+    }
+
+    .navbar {
+        padding: 0 0.8rem;
     }
 
     /* Serviços Ultra Responsivo para Mobile */
@@ -781,6 +1156,11 @@ footer {
         font-size: 0.9rem;
     }
 
+    .about-closing {
+        padding: 1rem;
+        font-size: 0.9rem;
+    }
+
     .contact {
         padding: 2rem 1rem;
     }
@@ -790,7 +1170,48 @@ footer {
         margin-bottom: 1.5rem;
     }
 
-    .contact-form {
-        max-width: 100%;
+    .contact-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .instagram-feed {
+        padding: 0.5rem;
+    }
+
+    .instagram-feed iframe {
+        min-height: 400px;
+    }
+
+    .contact-info h3 {
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+    }
+
+    .contact-methods {
+        gap: 1rem;
+    }
+
+    .contact-method {
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    .contact-method span {
+        font-size: 1.5rem;
+        flex-shrink: 0;
+    }
+
+    .contact-method strong {
+        font-size: 1rem;
+    }
+
+    .contact-method p {
+        font-size: 0.85rem;
+    }
+
+    footer {
+        padding: 1.5rem;
+        font-size: 0.85rem;
     }
 }
